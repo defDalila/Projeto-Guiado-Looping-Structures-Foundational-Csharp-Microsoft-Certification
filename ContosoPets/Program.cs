@@ -18,6 +18,7 @@ int maxPets = 8;
 string? readResult;
 string menuSelection = "";
 
+string[] labelsForAnimalData = ["ID #", "Specie", "Age", "Nickname", "Physical Description", "Personality"];
 string[,] ourAnimals = new string[maxPets, 6];
 
 #region Inicializar o array com dados de exemplo
@@ -28,7 +29,7 @@ for (int i = 0; i < maxPets; i++)
 	{
 		case 0:
 			animalSpecies = "dog";
-			animalID = "d1";
+			animalID = "D1";
 			animalAge = "2";
 			animalPhysicalDescription = "medium sized cream colored female golden retriever weighing about 65 pounds. housebroken.";
 			animalPersonalityDescription = "loves to have her belly rubbed and likes to chase her tail. gives lots of kisses.";
@@ -36,7 +37,7 @@ for (int i = 0; i < maxPets; i++)
 			break;
 		case 1:
 			animalSpecies = "dog";
-			animalID = "d2";
+			animalID = "D2";
 			animalAge = "9";
 			animalPhysicalDescription = "large reddish-brown male golden retriever weighing about 85 pounds. housebroken.";
 			animalPersonalityDescription = "loves to have his ears rubbed when he greets you at the door, or at any time! loves to lean-in and give doggy hugs.";
@@ -44,7 +45,7 @@ for (int i = 0; i < maxPets; i++)
 			break;
 		case 2:
 			animalSpecies = "cat";
-			animalID = "c3";
+			animalID = "C3";
 			animalAge = "1";
 			animalPhysicalDescription = "small white female weighing about 8 pounds. litter box trained.";
 			animalPersonalityDescription = "friendly";
@@ -52,7 +53,7 @@ for (int i = 0; i < maxPets; i++)
 			break;
 		case 3:
 			animalSpecies = "cat";
-			animalID = "c4";
+			animalID = "C4";
 			animalAge = "?";
 			animalPhysicalDescription = "";
 			animalPersonalityDescription = "";
@@ -77,8 +78,6 @@ for (int i = 0; i < maxPets; i++)
 }
 #endregion
 
-#region Menu da aplicação
-
 do
 {
 	Console.Clear();
@@ -93,24 +92,36 @@ do
 	Console.WriteLine(" 7. Display all cats with a specified characteristic");
 	Console.WriteLine(" 8. Display all dogs with a specified characteristic");
 	Console.WriteLine();
-	Console.Write("Enter your selection number (or type Exit to exit the program): ");
+	Console.Write("Enter your selection number (or type 0 to exit the program): ");
 
 	readResult = Console.ReadLine();
 
 	if (readResult != null)
 	{
-		menuSelection = readResult.Trim().ToLower();
+		menuSelection = readResult.ToLower().Trim();
 	}
-
-	// Console.WriteLine("Press the Enter key to continue");
-	// Console.ReadKey();
 
 	switch (menuSelection)
 	{
+		case "0":
+			// Exit the application
+			break;
 		case "1":
-			// List all of our current pet information
-			Console.WriteLine($"\nYou selected menu option {menuSelection}.");
-			Console.WriteLine("this app feature is coming soon - please check back to see progress.");
+			Console.Clear();
+			Console.WriteLine($"\n----- List all of our current pet information -----\n");
+			
+			for (int i = 0; i < maxPets; i++)
+			{
+				if (ourAnimals[i, 0] != "")
+				{
+					Console.WriteLine();
+					for (int j = 0; j < 6; j++)
+					{
+						Console.WriteLine($"{labelsForAnimalData[j]}: {ourAnimals[i, j]}");
+					}
+				}
+			}
+			
 			Console.WriteLine("Press the Enter key to continue.");
 			readResult = Console.ReadLine();
 			break;
@@ -136,8 +147,8 @@ do
 			readResult = Console.ReadLine();
 			break;
 		case "5":
-			Console.WriteLine($"\nYou selected menu option {menuSelection}.");
 			// Edit an animal’s age
+			Console.WriteLine($"\nYou selected menu option {menuSelection}.");
 			Console.WriteLine("this app feature is coming soon - please check back to see progress.");
 			Console.WriteLine("Press the Enter key to continue.");
 			readResult = Console.ReadLine();
@@ -171,6 +182,5 @@ do
 			break;
 	}
 
-} while (menuSelection != "exit");
+} while (menuSelection != "0");
 
-#endregion
