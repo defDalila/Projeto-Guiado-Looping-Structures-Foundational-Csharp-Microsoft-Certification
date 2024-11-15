@@ -1,9 +1,11 @@
 ﻿/*
 
-Projeto Guiado - Desenvolver Estruturas de Ramificação Condicional e Loop em C#
+Projeto - Desenvolver Estruturas de Ramificação Condicional e Loop em C#
 
 */
 
+
+using System.Reflection.Metadata;
 
 Console.Clear();
 
@@ -18,7 +20,7 @@ int maxPets = 8;
 string? readResult;
 string menuSelection = "";
 
-string[] labelsForAnimalData = ["ID #", "Species", "Age", "Nickname", "Physical Description", "Personality"];
+string[] labelsForAnimalData = ["ID #", "Species", "Nickname", "Age", "Nickname", "Physical Description", "Personality"];
 string[,] ourAnimals = new string[maxPets, 6];
 
 #region Inicializa o array com dados de exemplo
@@ -35,6 +37,7 @@ for (int i = 0; i < maxPets; i++)
 			animalPersonalityDescription = "loves to have her belly rubbed and likes to chase her tail. gives lots of kisses.";
 			animalNickname = "lola";
 			break;
+			
 		case 1:
 			animalSpecies = "dog";
 			animalID = "D2";
@@ -43,6 +46,7 @@ for (int i = 0; i < maxPets; i++)
 			animalPersonalityDescription = "loves to have his ears rubbed when he greets you at the door, or at any time! loves to lean-in and give doggy hugs.";
 			animalNickname = "loki";
 			break;
+			
 		case 2:
 			animalSpecies = "cat";
 			animalID = "C3";
@@ -51,6 +55,7 @@ for (int i = 0; i < maxPets; i++)
 			animalPersonalityDescription = "friendly";
 			animalNickname = "Puss";
 			break;
+			
 		case 3:
 			animalSpecies = "cat";
 			animalID = "C4";
@@ -59,6 +64,16 @@ for (int i = 0; i < maxPets; i++)
 			animalPersonalityDescription = "";
 			animalNickname = "";
 			break;
+		
+		case 4:
+			animalSpecies = "dog";
+			animalID = "D5";
+			animalAge = "5";
+			animalPhysicalDescription = "";
+			animalPersonalityDescription = "";
+			animalNickname = "";
+			break;
+
 		default:
 			animalSpecies = "";
 			animalID = "";
@@ -71,8 +86,8 @@ for (int i = 0; i < maxPets; i++)
 
 	ourAnimals[i, 0] = animalID;
 	ourAnimals[i, 1] = animalSpecies;
-	ourAnimals[i, 2] = animalAge;
-	ourAnimals[i, 3] = animalNickname;
+	ourAnimals[i, 2] = animalNickname;
+	ourAnimals[i, 3] = animalAge;
 	ourAnimals[i, 4] = animalPhysicalDescription;
 	ourAnimals[i, 5] = animalPersonalityDescription;
 }
@@ -106,6 +121,7 @@ do
 		case "0":
 			// Exit the application
 			break;
+			
 		case "1":
 			Console.Clear();
 			Console.WriteLine($"\n----- List all of our current pet information -----\n");
@@ -127,7 +143,7 @@ do
 			break;
 			
 		case "2":
-			// 
+			Console.Clear();
 			Console.WriteLine($"\n----- Add a new animal friend -----\n");
 
 			string anotherPet = "y";
@@ -172,27 +188,6 @@ do
 
 				animalID = animalSpecies.Substring(0, 1).ToUpper() + (petCount + 1).ToString();
 
-				do
-				{
-					int petAge;
-					Console.Write("\nEnter the pet's age or '?' if unknown: ");
-					readResult = Console.ReadLine();
-
-					if (readResult != null)
-					{
-						animalAge = readResult.Trim();
-
-						if (animalAge != "?")
-						{
-							validEntry = int.TryParse(animalAge, out petAge);
-						}
-						else
-						{
-							validEntry = true;
-						}
-					}
-
-				} while (validEntry == false);
 
 				do
 				{
@@ -204,11 +199,35 @@ do
 						animalNickname = readResult.ToLower();
 						if (animalNickname == "")
 						{
-							animalNickname = "To Be Determined...";
+							animalNickname = "tbd";
 						}
 					}
 				} while (animalNickname == "");
 
+
+				do
+				{
+					
+					Console.Write("\nEnter the pet's age or '?' if unknown: ");
+					readResult = Console.ReadLine();
+
+					if (readResult != null)
+					{
+						animalAge = readResult.Trim();
+
+						if (animalAge != "?")
+						{
+							validEntry = int.TryParse(animalAge, out _);
+						}
+						else
+						{
+							validEntry = true;
+						}
+					}
+
+				} while (validEntry == false);
+				
+				
 				do
 				{
 					Console.Write("\nEnter a physical description of the pet (size, color, gender...): ");
@@ -219,11 +238,12 @@ do
 						animalPhysicalDescription = readResult.ToLower();
 						if (animalPhysicalDescription == "")
 						{
-							animalPhysicalDescription = "To Be Determined...";
+							animalPhysicalDescription = "tbd";
 						}
 					}
 
 				} while (animalPhysicalDescription == "");
+				
 
 				do
 				{
@@ -235,20 +255,22 @@ do
 						animalPersonalityDescription = readResult.ToLower();
 						if (animalPersonalityDescription == "")
 						{
-							animalPersonalityDescription = "To Be Determined...";
+							animalPersonalityDescription = "tbd";
 						}
 					}
 
 				} while (animalPersonalityDescription == "");
+				
 
 				ourAnimals[petCount, 0] = animalID;
 				ourAnimals[petCount, 1] = animalSpecies;
-				ourAnimals[petCount, 2] = animalAge;
-				ourAnimals[petCount, 3] = animalNickname;
+				ourAnimals[petCount, 2] = animalNickname;
+				ourAnimals[petCount, 3] = animalAge;
 				ourAnimals[petCount, 4] = animalPhysicalDescription;
 				ourAnimals[petCount, 5] = animalPersonalityDescription;
 
 				petCount++;
+
 
 				if (petCount < maxPets)
 				{
@@ -266,19 +288,78 @@ do
 				}
 			}
 
+
 			if (petCount >= maxPets)
 			{
 				Console.WriteLine("We have reached our limit on the number of pets that we can manage.");
 			}
 
-			Console.WriteLine("Press the Enter key to continue.");
+
+			Console.WriteLine("\nPress the Enter key to continue.");
 			readResult = Console.ReadLine();
 			break;
 			
 		case "3":
-			// Ensure animal ages and physical descriptions are complete
-			Console.WriteLine($"\nYou selected menu option {menuSelection}.");
-			Console.WriteLine("Challenge Project - please check back soon to see progress.");
+		
+			Console.Clear();
+			Console.WriteLine($"----- Ensure animal ages and physical descriptions are complete -----\n");
+			
+			for (int i = 0; i < maxPets; i++)
+			{
+				if (ourAnimals[i, 0] != "")
+				{
+					int ageIndex = 3;			
+					if (ourAnimals[i, ageIndex] == "?")
+					{
+                        bool validAge;
+                        do
+                        {
+							Console.Write($"Enter an age for ID # {ourAnimals[i, 0]}: ");
+							validAge = int.TryParse(Console.ReadLine(), out int petAge);
+							
+							if (validAge)
+							{
+								ourAnimals[i, ageIndex] = petAge.ToString();
+							}
+							else
+							{
+								Console.WriteLine("Please enter a valid age.\n");
+							}
+					
+							
+						} while (!validAge);
+					}
+					
+										
+					int physicalIndex = 4;
+					if (ourAnimals[i, physicalIndex] == "tbd" || ourAnimals[i, physicalIndex] == "")
+					{
+						Console.WriteLine($"Animal ID {ourAnimals[i, 0]} has an invalid physical description.");
+						
+						bool validEntry = false;
+						
+						do
+						{
+							Console.Write($"Enter a physical description for ID # {ourAnimals[i, 0]} (min 3 characters): ");
+							readResult = Console.ReadLine();
+							
+							if (readResult != null && readResult.Length >= 3)
+							{
+								ourAnimals[i, physicalIndex] = readResult.ToLower();
+								validEntry = true;
+							}
+							else
+							{
+								Console.WriteLine("Please enter a valid physical description.\n");
+							}
+							
+						} while (!validEntry);
+					}
+				
+				}
+			}
+			
+			Console.WriteLine("\nAge and physical description fields are complete for all of our friends.");
 			Console.WriteLine("Press the Enter key to continue.");
 			readResult = Console.ReadLine();
 			break;
@@ -332,4 +413,8 @@ do
 	}
 
 } while (menuSelection != "0");
-
+Console.WriteLine("Exiting the Contoso PetFriends app.");
+Thread.Sleep(2000);
+Console.WriteLine("Goodbye!");
+Thread.Sleep(1000);
+Console.Clear();
