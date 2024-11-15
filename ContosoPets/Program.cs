@@ -311,9 +311,9 @@ do
 					int ageIndex = 3;			
 					if (ourAnimals[i, ageIndex] == "?")
 					{
-                        bool validAge;
-                        do
-                        {
+						bool validAge;
+						do
+						{
 							Console.Write($"Enter an age for ID # {ourAnimals[i, 0]}: ");
 							validAge = int.TryParse(Console.ReadLine(), out int petAge);
 							
@@ -365,9 +365,61 @@ do
 			break;
 			
 		case "4":
-			// Ensure animal nicknames and personality descriptions are complete
-			Console.WriteLine($"\nYou selected menu option {menuSelection}.");
-			Console.WriteLine("Challenge Project - please check back soon to see progress.");
+			Console.Clear();
+			Console.WriteLine("----- Ensure animal nicknames and personality descriptions are complete -----\n");
+			
+			for (int i = 0; i < maxPets; i++)
+			{
+				if (ourAnimals[i, 0] != "")
+				{
+					int nicknameIndex = 2;
+					if (ourAnimals[i, nicknameIndex] == "tbd" || ourAnimals[i, nicknameIndex] == "")
+					{
+						bool validEntry = false;
+						do
+						{
+							Console.Write($"Enter a nickname for ID # {ourAnimals[i, 0]} (min 3 characters): ");
+							readResult = Console.ReadLine();
+							
+							if (readResult != null && readResult.Length >= 3)
+							{
+								ourAnimals[i, nicknameIndex] = readResult.ToLower();
+								validEntry = true;
+							}
+							else
+							{
+								Console.WriteLine("Please enter a valid nickname.\n");
+							}
+							
+						} while (!validEntry);
+					}
+					
+					int personalityIndex = 5;
+					if (ourAnimals[i, personalityIndex] == "tbd" || ourAnimals[i, personalityIndex] == "")
+					{
+						bool validEntry = false;
+						
+						do
+						{
+							Console.Write($"Enter a personality description for ID # {ourAnimals[i, 0]} (likes or dislikes, tricks, energy level) (min 3 characters): ");
+							readResult = Console.ReadLine();
+							
+							if (readResult != null && readResult.Length >= 3)
+							{
+								ourAnimals[i, personalityIndex] = readResult.ToLower();
+								validEntry = true;
+							}
+							else
+							{
+								Console.WriteLine("Please enter a valid personality description.\n");
+							}
+							
+						} while (!validEntry);
+					}
+				}
+			}
+			
+			Console.WriteLine("\nNickname and personality description fields are complete for all of our friends.");
 			Console.WriteLine("Press the Enter key to continue.");
 			readResult = Console.ReadLine();
 			break;
@@ -413,8 +465,10 @@ do
 	}
 
 } while (menuSelection != "0");
+
+Console.Clear();
 Console.WriteLine("Exiting the Contoso PetFriends app.");
-Thread.Sleep(2000);
+Thread.Sleep(1000);
 Console.WriteLine("Goodbye!");
 Thread.Sleep(1000);
 Console.Clear();
