@@ -1,19 +1,15 @@
 # 💼 Projeto Guiado - Desenvolver Estruturas de Ramificação Condicional e Loop em C# 
 
-> Projeto Guiado desenolvido no roteiro de aprendizagem "Introdução ao C#, Parte 3" , sendo parte dos módulos necessários para a Certificação em Fundamentos do C# fornecido pela Microsoft. 
+> Projeto Guiado desenolvido no roteiro de aprendizagem "Introdução ao C#, Parte 3" , sendo parte dos módulos necessários para a Certificação em Fundamentos do C# fornecido pela Microsoft, que tem como objetivo:
+>> Obter experiência no desenvolvimento de um aplicativo de console que implemente instruções de seleção e iteração para obter especificações de aplicativo no qual deverá:
+>> - Adicionar dados de exemplo pré-definidos à matriz de animais de estimação
+>> - Fazer a iteração de um bloco de código "opções de menu e seleção do usuário" para estabelecer o loop >externo do aplicativo.
+>> - Implementar branches de código correspondentes às seleções de menu do usuário.
+>> - Exibir todas as informações contidas na matriz que é usada para armazenar os dados dos animais de estimação (com base na seleção de menu do usuário).
+>> - Fazer a iteração de um bloco de código "adicionar informações sobre os animais" que permite que o usuário adicione um ou mais animais novos à matriz de animais de estimação (com base na seleção de menu do usuário).
+>> 
 
-
-## :dart: Objetivo 
-
-Obter experiência no desenvolvimento de um aplicativo de console que implemente instruções de seleção e iteração para obter especificações de aplicativo no qual deverá:
-
-- Adicionar dados de exemplo pré-definidos à matriz de animais de estimação
-- Fazer a iteração de um bloco de código "opções de menu e seleção do usuário" para estabelecer o loop externo do aplicativo.
-- Implementar branches de código correspondentes às seleções de menu do usuário.
-- Exibir todas as informações contidas na matriz que é usada para armazenar os dados dos animais de estimação (com base na seleção de menu do usuário).
-- Fazer a iteração de um bloco de código "adicionar informações sobre os animais" que permite que o usuário adicione um ou mais animais novos à matriz de animais de estimação (com base na seleção de menu do usuário).
-
-## :bookmark_tabs:	 Descrição do Projeto
+## 📑	 Descrição do Projeto
 
  Você está trabalhando no aplicativo Contoso Pets, um aplicativo que ajuda a colocar animais de estimação em novas casas. As especificações do aplicativo são as seguintes:
  
@@ -26,6 +22,7 @@ Obter experiência no desenvolvimento de um aplicativo de console que implemente
     - Descrição das condições/características físicas do animal de estimação.
     - Descrição da personalidade do animal de estimação.
     - Apelido do animal de estimação.
+
 - Implemente um conjunto de dados de exemplo que represente os cães e gatos atualmente sob seus cuidados.
 
 - Exiba opções de menu para acessar os principais recursos do aplicativo.
@@ -41,25 +38,27 @@ Obter experiência no desenvolvimento de um aplicativo de console que implemente
     - Algumas características físicas do animal de estimação podem ser desconhecidas até o exame de um veterinário. Por exemplo: idade, raça e status de castração.
     - O apelido e a personalidade do animal de estimação podem ser desconhecidos logo que ele chega.
     
-- Verificar se os dados de idade e descrição física dos animais estão completos. Isso pode exigir o exame de um veterinário.
+- Verificar se os dados de idade e descrição física dos animais estão completos. 
 
-- Verificar se os dados de apelido e descrição da personalidade dos animais estão completos (isso pode exigir que a equipe conheça melhor o animal de estimação).
+- Verificar se os dados de apelido e descrição da personalidade dos animais estão completos.
 
-- Alterar a idade do animal (se a data de nascimento dele for conhecida e ele fizer aniversário enquanto estiver sob nossos cuidados).
+- Alterar a idade do animal.
 
-- Alterar a descrição de personalidade do animal (ele pode mudar de comportamento após algum tempo sob nossos cuidados).
+- Alterar a descrição de personalidade do animal.
 
 - Exibir todos os gatos que atendem às características físicas especificadas pelo usuário.
 
 - Exibir todos os cães que atendem às características físicas especificadas pelo usuário.
 
-Uma versão inicial do aplicativo já foi concluída. O projeto de código inicial deste módulo de projeto guiado inclui um arquivo Program.cs, que fornece os seguintes recursos de código:
+## 🔰 Projeto Inicial
+
+Uma versão inicial do aplicativo já foi concluída. O projeto de código inicial deste módulo de projeto guiado inclui um arquivo `Program.cs`, que fornece os seguintes recursos de código:
 
 - O código declara variáveis usadas para coletar e processar dados de animais de estimação e seleções de itens de menu.
 
-- O código declara a matriz ourAnimals.
+- O código declara a matriz `ourAnimals`.
 
-- O código usa um loop for em torno de um constructo if-elseif-else para preencher a matriz ourAnimals com um conjunto de dados de exemplo.
+- O código usa um loop for em torno de um constructo `if-elseif-else` para preencher a matriz `ourAnimals` com um conjunto de dados de exemplo.
 
 - O código exibe as seguintes opções principais de menu para seleção pelo usuário:
     1. Listar todas as nossas informações atuais sobre os animais de estimação.
@@ -71,9 +70,11 @@ Uma versão inicial do aplicativo já foi concluída. O projeto de código inici
     1. Exibir todos os gatos com uma característica especificada.
     1. Exibir todos os cães com uma característica especificada.
     
-- Insira o item de menu desejado ou digite "Exit" para sair do programa
+- Insira o item de menu desejado ou digite "`0`" para sair do programa
 
 - O código lê o item de menu selecionado pelo usuário e exibe uma mensagem ecoando a seleção.
+
+## 🎯 Meta do Projeto 
 
 A meta é desenvolver os recursos que implementam as duas primeiras opções de menu. Para cumprir essa meta, deverá concluir as seguintes tarefas:
 
@@ -83,7 +84,7 @@ A meta é desenvolver os recursos que implementam as duas primeiras opções de 
 - Criar um loop para inserir novos dados na matriz ourAnimals (opção 2 do menu – parte 1).
 - Escrever código para ler e salvar novos dados na matriz ourAnimals (opção 2 do menu – parte 2).
 
-## 🔰 Referências
+## :mag_right:	 Referências
 
 :computer: Descrição do Projeto: [Prepare-se para o projeto guiado: Desenvolver ramificação condicional e loop](https://learn.microsoft.com/pt-br/training/modules/guided-project-develop-conditional-branching-looping/2-prepare)
 
