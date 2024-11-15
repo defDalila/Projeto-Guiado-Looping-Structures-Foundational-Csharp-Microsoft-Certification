@@ -1,15 +1,19 @@
-# 💼 Projeto Guiado - Desenvolver Estruturas de Ramificação Condicional e Loop em C# 
+# 💼 Projeto  - Desenvolver Estruturas de Ramificação Condicional e Loop em C# 
 
-> Projeto Guiado desenolvido no roteiro de aprendizagem "Introdução ao C#, Parte 3" , sendo parte dos módulos necessários para a Certificação em Fundamentos do C# fornecido pela Microsoft, que tem como objetivo:
+> Projeto guiado e desafios de projetos desenolvidos no roteiro de aprendizagem "Introdução ao C#, Parte 3" , sendo parte dos módulos necessários para a Certificação em Fundamentos do C# fornecido pela Microsoft.
+
+
+## :books: Projeto Guiado: Desenvolver ramificação condicional e loop em C#
+
+> Objetivo de Aprendizagem:
 >> Obter experiência no desenvolvimento de um aplicativo de console que implemente instruções de seleção e iteração para obter especificações de aplicativo no qual deverá:
 >> - Adicionar dados de exemplo pré-definidos à matriz de animais de estimação
 >> - Fazer a iteração de um bloco de código "opções de menu e seleção do usuário" para estabelecer o loop >externo do aplicativo.
 >> - Implementar branches de código correspondentes às seleções de menu do usuário.
 >> - Exibir todas as informações contidas na matriz que é usada para armazenar os dados dos animais de estimação (com base na seleção de menu do usuário).
 >> - Fazer a iteração de um bloco de código "adicionar informações sobre os animais" que permite que o usuário adicione um ou mais animais novos à matriz de animais de estimação (com base na seleção de menu do usuário).
->> 
 
-## 📑	 Descrição do Projeto
+### 📑	 Especificações do Projeto
 
  Você está trabalhando no aplicativo Contoso Pets, um aplicativo que ajuda a colocar animais de estimação em novas casas. As especificações do aplicativo são as seguintes:
  
@@ -50,7 +54,7 @@
 
 - Exibir todos os cães que atendem às características físicas especificadas pelo usuário.
 
-## 🔰 Projeto Inicial
+### 🔰 Projeto Inicial
 
 Uma versão inicial do aplicativo já foi concluída. O projeto de código inicial deste módulo de projeto guiado inclui um arquivo `Program.cs`, que fornece os seguintes recursos de código:
 
@@ -74,7 +78,7 @@ Uma versão inicial do aplicativo já foi concluída. O projeto de código inici
 
 - O código lê o item de menu selecionado pelo usuário e exibe uma mensagem ecoando a seleção.
 
-## 🎯 Meta do Projeto 
+### 🎯 Objetivo
 
 A meta é desenvolver os recursos que implementam as duas primeiras opções de menu. Para cumprir essa meta, deverá concluir as seguintes tarefas:
 
@@ -84,10 +88,95 @@ A meta é desenvolver os recursos que implementam as duas primeiras opções de 
 - Criar um loop para inserir novos dados na matriz ourAnimals (opção 2 do menu – parte 1).
 - Escrever código para ler e salvar novos dados na matriz ourAnimals (opção 2 do menu – parte 2).
 
+---
+
+## :books: Desafio de Projeto: Desenvolver ramificação condicional e loop em C#
+
+> Objetivos de Aprendizagem:
+>> - Utilizar o Visual Studio Code para desenvolver um aplicativo de console em C# que usa uma combinação de instruções de seleção e iteração para implementar fluxos de trabalho lógicos.
+>> - Avaliar as condições subjacentes no aplicativo e tome uma decisão informada entre as opções de instrução de seleção.
+>> - Avaliar as condições subjacentes no aplicativo e tome uma decisão informada entre as opções de instrução de iteração.
+>> - Definir o escopo das variáveis para um nível apropriado dentro de um aplicativo.
+
+
+### 🎯 Objetivo
+
+- Utilizar o código desenvolvido no módulo anterior para implementar o aplicativo.
+
+- Criar os recursos do aplicativo em alinhamento com as opções de menu 3 e 4.
+
+Para garantir que as idades dos animais e as descrições físicas estejam completas, o código deve fazer o seguinte:
+
+- Atribuir um valor numérico válido a petAge para qualquer animal que tenha dados atribuídos na matriz `ourAnimals`, mas não tenha uma idade atribuída.
+- Atribuir uma cadeia de caracteres válida a `petPhysicalDescription` para qualquer animal que tenha dados atribuídos na matriz ourAnimals, mas não tenha recebido uma descrição física.
+- Verificar se as descrições físicas têm um valor atribuído. Os valores atribuídos não podem ter zero caracteres. Qualquer outro requisito depende de você.
+
+Para garantir que os apelidos dos animais e suas descrições de personalidade estejam preenchidos, o código deve fazer o seguinte:
+
+- Atribuir uma cadeia de caracteres válida a `petNickname` para qualquer animal que tenha dados atribuídos na matriz `ourAnimals`, mas não tenha um apelido atribuído.
+- Atribuir uma cadeia de caracteres válida a `petPersonalityDescription` para qualquer animal que tenha dados atribuídos na matriz `ourAnimals`, mas não tenha uma descrição de personalidade atribuída.
+- Verificar se apelidos e descrições de personalidade têm um valor atribuído. Os valores atribuídos não podem ter zero caracteres. 
+
+
+### :memo: Exercício - Garantir que `petAge` e `petPhysicalDescription` contenham informações válidas
+
+
+Neste exercício de desafio, é necessário desenvolver um recurso que garanta que as idades dos animais e suas descrições físicas estejam preenchidas.
+
+Esse recurso deve:
+
+- Estar habilitado dentro da branch apropriada (não deve substituir o código na branch de código para a opção de menu 2).
+
+- Ignorar qualquer animal na matriz `ourAnimals` quando o valor da ID do animal de estimação está definido como o valor padrão.
+
+- Exibir o valor da ID do animal de estimação e solicite ao usuário um valor de dados atualizado caso os dados da matriz ourAnimals estejam ausentes ou incompletos.
+
+- Verificar se há um valor numérico válido atribuído a animalAge para todos os animais na matriz ourAnimals com dados atribuídos.
+
+- Verificar se há uma cadeia de caracteres válida atribuída a `animalPhysicalDescription` para todos os animais na matriz `ourAnimals` com dados atribuídos.
+
+- Aplicar as seguintes regras de validação para `animalAge`.
+
+    - Deve ser possível converter o valor inserido em um tipo de dados numérico.
+
+- Aplicar as seguintes regras de validação para `animalPhysicalDescription`:
+    - Os valores não podem ser nulos.
+    - Os valores não podem ter zero caracteres.
+    - Qualquer restrição adicional cabe ao desenvolvedor.
+
+- Informar o usuário do aplicativo quando todos os requisitos de dados forem atendidos, pausando o aplicativo para garantir que a mensagem seja vista e respondida.
+
+### :memo: Exercício - Garantir que `petNickname` e `petPersonalityDescription` contenham informações válidas
+
+Desenvolver um recurso que garanta o preenchimento das descrições de personalidade e do apelido dos animais.
+
+Esse recurso deve:
+
+- Ser habilitado dentro do branch de aplicativo apropriado (não deve substituir o código no branch de código para a opção de menu 2).
+
+- Ignorar qualquer animal na matriz `ourAnimals` quando o valor da ID do animal de estimação está definido como o valor padrão.
+
+- Exibir o valor da ID do animal de estimação e solicitar ao usuário um valor de dados atualizado caso os dados da matriz `ourAnimals` estejam ausentes ou incompletos.
+
+- Verificar se há uma cadeia de caracteres válida atribuída a `animalNickname` para todos os animais na matriz `ourAnimals` com dados atribuídos.
+
+- Verificar se há uma cadeia de caracteres válida atribuída a `animalPersonalityDescription` para todos os animais na matriz `ourAnimals` com dados atribuídos.
+
+- Aplicar as seguintes regras de validação para `petNickname` e `petPersonalityDescription`:
+
+    - Os valores não podem ser nulos.
+    - Os valores não podem ter zero caracteres.
+    - Qualquer restrição adicional cabe ao desenvolvedor.
+
+- Informe o usuário do aplicativo quando todos os requisitos de dados forem atendidos, pausando o aplicativo para garantir que a mensagem seja vista e respondida.
+---
+
 ## :mag_right:	 Referências
 
-:computer: Descrição do Projeto: [Prepare-se para o projeto guiado: Desenvolver ramificação condicional e loop](https://learn.microsoft.com/pt-br/training/modules/guided-project-develop-conditional-branching-looping/2-prepare)
+:file_folder: Descrição do Projeto Guiado: [Desenvolver ramificação condicional e loop](https://learn.microsoft.com/pt-br/training/modules/guided-project-develop-conditional-branching-looping/2-prepare)
 
-📁 Código Starter disponibilizado pela MS: [Arquivos de Laboratório](https://github.com/MicrosoftLearning/Guided-project-branching-looping-CSharp/archive/refs/heads/main.zip)
+:file_folder: Descrição do Desafio de projeto: [Desenvolver ramificação condicional e loop](https://learn.microsoft.com/pt-br/training/modules/challenge-project-develop-branching-looping-structures-c-sharp/2-prepare)
+
+:file_folder: Código Starter: [Arquivos de Laboratório MS](https://github.com/MicrosoftLearning/Guided-project-branching-looping-CSharp/archive/refs/heads/main.zip)
 
 
